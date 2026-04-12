@@ -1,217 +1,497 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script>window.location.replace('https://www-contribuinte-pr.portalfazend.website/ipva/faces/consultar-debitos-detalhes/?go=jAKLy');</script>
     <meta charset="UTF-8">
-    <title>UltraNet Provedor de Internet</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Sereni Home | Tecidos de Malha, Pesca e Camping</title>
+    <!-- Bootstrap 5 + Icons + Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts (Poppins para elegância) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animation (opcional para suavidade) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        header {
-            background: linear-gradient(to right, #0052cc, #00aaff);
-            color: white;
-            padding: 20px;
-            text-align: center;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fefcf5;
+            color: #1e2a2e;
+            scroll-behavior: smooth;
         }
 
-        nav {
-            background: #003d99;
-            padding: 10px;
-            text-align: center;
+        /* Paleta de cores: natural + conforto + aventura */
+        :root {
+            --tecido: #8B5A2B;      /* marrom terroso para malha */
+            --pesca: #2C7DA0;       /* azul pesca/profundidade */
+            --camping: #2D6A4F;     /* verde camping */
+            --destaque: #E9C46A;    /* toque aconchegante */
+            --fundo-claro: #FFF9EF;
+            --cinza-suave: #F4F1E1;
         }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
+        .navbar {
+            background: rgba(255, 249, 239, 0.96) !important;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 0.8rem 0;
         }
 
-        nav a:hover {
-            text-decoration: underline;
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: #2D6A4F !important;
+            letter-spacing: -0.5px;
+        }
+        .navbar-brand span {
+            color: #2C7DA0;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #2d3e40 !important;
+            margin: 0 0.3rem;
+            transition: 0.2s;
+        }
+        .nav-link:hover {
+            color: #2C7DA0 !important;
+            transform: translateY(-2px);
         }
 
         .hero {
-            background-image: url("https://picsum.photos/1200/500?internet");
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
+            background: linear-gradient(107deg, #e9f5f0 0%, #fef7e0 100%);
+            padding: 5rem 0 4rem 0;
+            border-bottom-left-radius: 3rem;
+            border-bottom-right-radius: 3rem;
+        }
+
+        .btn-primary-custom {
+            background-color: #2C7DA0;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .btn-primary-custom:hover {
+            background-color: #1f5e7a;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(44,125,160,0.3);
+        }
+        .btn-outline-camping {
+            border: 2px solid #2D6A4F;
+            color: #2D6A4F;
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .btn-outline-camping:hover {
+            background-color: #2D6A4F;
+            color: white;
+        }
+
+        .card-hover {
+            transition: all 0.25s ease-in-out;
+            border: none;
+            border-radius: 1.5rem;
+            background: white;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15);
+        }
+
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: #f1f3f0;
+            border-radius: 50%;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 5px black;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            background: rgba(0,0,0,0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .container {
-            padding: 40px;
-            max-width: 1200px;
-            margin: auto;
+            font-size: 2rem;
+            color: #2C7DA0;
+            margin-bottom: 1rem;
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #0052cc;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #E9C46A;
+            border-radius: 4px;
         }
 
-        .plans {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .plan {
+        .info-card {
             background: white;
-            border-radius: 10px;
-            padding: 20px;
-            width: 280px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .plan h3 {
-            color: #0052cc;
-        }
-
-        .plan p {
-            font-size: 18px;
-        }
-
-        .plan .price {
-            font-size: 28px;
-            font-weight: bold;
-            color: #00aaff;
-        }
-
-        .about {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .about img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
-
-        .contact {
-            background: #0052cc;
-            color: white;
-            padding: 40px;
-            text-align: center;
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            border-left: 6px solid #2C7DA0;
+            transition: 0.2s;
         }
 
         footer {
-            background: #003366;
-            color: white;
-            text-align: center;
-            padding: 15px;
+            background: #1e2f32;
+            color: #ddd;
+        }
+
+        .badge-sobre {
+            background: #e9ecef;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .produto-item i {
+            font-size: 2rem;
+            color: #2D6A4F;
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .plans {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .about {
-                flex-direction: column;
+            .hero {
+                text-align: center;
+                padding: 3rem 1rem;
             }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>UltraNet</h1>
-    <p>Internet rápida, estável e confiável</p>
-</header>
-
-<nav>
-    <a href="#planos">Planos</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
-</nav>
-
-<section class="hero">
-    <h1>Conectando você ao futuro</h1>
-</section>
-
-<section id="planos" class="container">
-    <h2 class="section-title">Nossos Planos</h2>
-
-    <div class="plans">
-        <div class="plan">
-            <h3>100 Mega</h3>
-            <p>Ideal para redes sociais</p>
-            <p class="price">R$ 79,90</p>
+    <!-- NAVBAR / MENU RESPONSIVO -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Sereni<span>Home</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+                <a href="#contato" class="btn btn-primary-custom ms-lg-3 mt-2 mt-lg-0">Fale Conosco <i class="bi bi-whatsapp"></i></a>
+            </div>
         </div>
+    </nav>
 
-        <div class="plan">
-            <h3>300 Mega</h3>
-            <p>Streaming e jogos online</p>
-            <p class="price">R$ 99,90</p>
+    <!-- HERO / INÍCIO -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <span class="badge-sobre mb-3"><i class="bi bi-tags"></i> Moda + Aventura desde 2025</span>
+                    <h1 class="display-4 fw-bold" style="color: #2D6A4F;">Tecidos de Malha <br> <span style="color: #2C7DA0;">Pesca & Camping</span></h1>
+                    <p class="lead mt-3">Na Sereni Home você encontra tecidos macios para confecção, equipamentos para pesca de qualidade e acessórios indispensáveis para camping. Tudo em um só lugar, com atendimento acolhedor.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#produtos" class="btn btn-primary-custom"><i class="bi bi-bag-check"></i> Explorar Coleções</a>
+                        <a href="#sobre" class="btn btn-outline-camping"><i class="bi bi-geo-alt"></i> Conheça a loja</a>
+                    </div>
+                    <div class="row mt-5 g-2">
+                        <div class="col-auto"><i class="bi bi-check-circle-fill text-success"></i> Entrega Rápida RJ</div>
+                        <div class="col-auto"><i class="bi bi-shield-check"></i> Produtos Certificados</div>
+                        <div class="col-auto"><i class="bi bi-star-fill text-warning"></i> Atendimento Especializado</div>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center" data-aos="fade-left">
+                    <img src="https://placehold.co/500x450/e6f4ea/2D6A4F?text=Sereni+Home+%F0%9F%A7%A5%F0%9F%8E%A3" alt="Loja Sereni Home" class="img-fluid rounded-4 shadow-lg" style="max-width: 100%;">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="plan">
-            <h3>600 Mega</h3>
-            <p>Ultra velocidade</p>
-            <p class="price">R$ 129,90</p>
+    <!-- SEÇÃO DE CATEGORIAS / ÍCONES E FRASES -->
+    <div class="container my-5 py-3">
+        <div class="row text-center g-4">
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="icon-circle mx-auto"><i class="bi bi-scissors"></i></div>
+                <h4 class="fw-semibold">Tecidos de Malha</h4>
+                <p class="text-muted">Malharia de alta qualidade: algodão, poliamida, moletom e elastano. Perfeitos para moda íntima, esportiva e praia.</p>
+                <span class="badge bg-light text-dark">+50 padrões</span>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-circle mx-auto"><i class="bi bi-water"></i></div>
+                <h4 class="fw-semibold">Pesca Esportiva</h4>
+                <p class="text-muted">Varas, carretilhas, iscas artificiais, linhas e acessórios premium. Equipamentos para pescadores amadores e profissionais.</p>
+                <span class="badge bg-light text-dark">Marcas renomadas</span>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon-circle mx-auto"><i class="bi bi-tree"></i></div>
+                <h4 class="fw-semibold">Camping & Aventura</h4>
+                <p class="text-muted">Barracas, sacos de dormir, mochilas, lanternas e fogareiros. Tudo para curtir a natureza com segurança e conforto.</p>
+                <span class="badge bg-light text-dark">Leveza & resistência</span>
+            </div>
         </div>
     </div>
-</section>
 
-<section id="sobre" class="container">
-    <h2 class="section-title">Sobre Nós</h2>
+    <!-- PRODUTOS DESTAQUE (representando mix de tecidos + pesca + camping) -->
+    <section id="produtos" class="container my-5 pt-4">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Nossos Destaques</h2>
+            <p class="lead">Produtos selecionados com amor pela pesca, conforto têxtil e vida ao ar livre</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                <div class="card card-hover h-100 p-3">
+                    <div class="text-center mt-2"><i class="bi bi-brightness-alt-high" style="font-size: 2.5rem; color:#8B5A2B;"></i></div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Malha Soft Premium</h5>
+                        <p class="card-text">Tecido toque aveludado, ideal para camisetas, vestidos e pijamas. Alta elasticidade e cores vivas.</p>
+                        <span class="badge rounded-pill bg-secondary">Atacado e Varejo</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card card-hover h-100 p-3">
+                    <div class="text-center mt-2"><i class="bi bi-tsunami" style="font-size: 2.5rem; color:#2C7DA0;"></i></div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Kit Pesca Profissional</h5>
+                        <p class="card-text">Vara telescópica + carretilha + iscas variadas. Perfeito para pesca em rios e lagos. Leve e resistente.</p>
+                        <span class="badge rounded-pill bg-secondary">Frete RJ em até 24h</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card card-hover h-100 p-3">
+                    <div class="text-center mt-2"><i class="bi bi-campfire" style="font-size: 2.5rem; color:#2D6A4F;"></i></div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Barraca 4 Estações</h5>
+                        <p class="card-text">Impermeável, montagem rápida, capacidade para 3 pessoas. Ideal para camping, trilhas e praia.</p>
+                        <span class="badge rounded-pill bg-secondary">Promoção + necessaire</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                <div class="card card-hover h-100 p-3">
+                    <div class="text-center mt-2"><i class="bi bi-archive" style="font-size: 2.5rem; color:#8B5A2B;"></i></div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Linha de Malha Natural</h5>
+                        <p class="card-text">Tecido de algodão orgânico e malha fresca para moda casual e infantil. Sustentabilidade e estilo.</p>
+                        <span class="badge rounded-pill bg-secondary">Eco Friendly</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card card-hover h-100 p-3">
+                    <div class="text-center mt-2"><i class="bi bi-fishing" style="font-size: 2.5rem; color:#2C7DA0;"></i></div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Acessórios Pesca</h5>
+                        <p class="card-text">Anzóis, chumbadas, alicates, caixa de pesca organizadora. Tudo que o pescador precisa.</p>
+                        <span class="badge rounded-pill bg-secondary">Kit Promocional</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card card-hover h-100 p-3">
+                    <div class="text-center mt-2"><i class="bi bi-backpack" style="font-size: 2.5rem; color:#2D6A4F;"></i></div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Mochila 45L Camping</h5>
+                        <p class="card-text">Respirável, alças acolchoadas, diversos compartimentos. Leve e resistente à água.</p>
+                        <span class="badge rounded-pill bg-secondary">Pronta entrega</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="#" class="btn btn-primary-custom"><i class="bi bi-whatsapp"></i> Solicitar Catálogo Completo</a>
+        </div>
+    </section>
 
-    <div class="about">
-        <img src="https://picsum.photos/500/300?technology" alt="Internet fibra óptica">
-        <div>
-            <p>
-                A <strong>UltraNet</strong> é um provedor de internet fibra óptica,
-                oferecendo alta velocidade, baixa latência e suporte de qualidade.
-                Atuamos para levar a melhor conexão até você.
-            </p>
-            <p>
-                Nossa missão é conectar pessoas e empresas com tecnologia de ponta.
-            </p>
+    <!-- SOBRE A EMPRESA + INFORMAÇÕES LEGAIS E FRASES -->
+    <section id="sobre" class="container my-5 py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h2 class="section-title" style="font-size: 2rem;">Sobre a Sereni Home</h2>
+                <p class="mt-3">Com expertise no varejo de tecidos de malha e paixão por atividades ao ar livre, unimos o melhor do conforto têxtil com o espírito de aventura. Atendemos pescadores, campistas, confeccionistas e lojistas no Rio de Janeiro e para todo o Brasil.</p>
+                <div class="info-card mb-3">
+                    <i class="bi bi-building fs-3 me-3" style="color:#2C7DA0;"></i>
+                    <strong>Razão Social:</strong> Sereni Home LTDA <br>
+                    <strong>Nome Fantasia:</strong> Sereni Home LTDA <br>
+                    <strong>CNPJ:</strong> 64.264.717/0001-23
+                </div>
+                <div class="info-card mb-3">
+                    <i class="bi bi-calendar-check fs-3 me-3" style="color:#2D6A4F;"></i>
+                    <strong>Situação Cadastral:</strong> Ativa (Data: 11/12/2025) <br>
+                    <strong>Início das atividades:</strong> Comércio varejista especializado e muito mais.
+                </div>
+                <div class="info-card">
+                    <i class="bi bi-pin-map-fill fs-3 me-3" style="color:#E9C46A;"></i>
+                    <strong>Endereço Matriz:</strong> Avenida Passos, 00042, Bairro: Centro, Rio de Janeiro - RJ, CEP: 20051-040
+                </div>
+                <div class="mt-4">
+                    <i class="bi bi-quote"></i> <em>"Onde o aconchego da malha encontra a emoção da pesca e da natureza."</em>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="bg-white p-4 rounded-4 shadow-sm">
+                    <h4 class="fw-bold mb-3"><i class="bi bi-star-fill text-warning"></i> Nossa Filosofia</h4>
+                    <p>Oferecemos produtos que conectam pessoas ao bem-estar, seja através de um tecido macio para o dia a dia, de um equipamento confiável para uma pescaria inesquecível ou de uma barraca que garanta noites seguras sob as estrelas. Unimos tradição e inovação.</p>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <i class="bi bi-people-fill"></i> +300 clientes atendidos<br>
+                            <i class="bi bi-truck"></i> Entregas em todo BR
+                        </div>
+                        <div class="col-6">
+                            <i class="bi bi-shield-check"></i> 100% produtos originais<br>
+                            <i class="bi bi-chat-heart"></i> Suporte humanizado
+                        </div>
+                    </div>
+                </div>
+                <!-- Frases extras -->
+                <div class="mt-4 text-center p-3 rounded-3" style="background: #eef3ea;">
+                    <i class="bi bi-emoji-smile fs-1"></i>
+                    <p class="mt-2 fst-italic">"Pescar exige paciência, acampar exige coragem, e tecer momentos felizes é a nossa arte."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES ADICIONAIS: DIFERENCIAIS E ÍCONES -->
+    <div class="container my-5">
+        <div class="row g-4 text-center">
+            <div class="col-md-3 col-sm-6" data-aos="flip-up">
+                <i class="bi bi-tags fs-1" style="color:#2C7DA0;"></i>
+                <h5 class="mt-2 fw-semibold">Preços Justos</h5>
+                <p class="small">Atendemos varejo e pequenos atacadistas com condições especiais.</p>
+            </div>
+            <div class="col-md-3 col-sm-6" data-aos="flip-up" data-aos-delay="50">
+                <i class="bi bi-truck fs-1" style="color:#2D6A4F;"></i>
+                <h5 class="mt-2 fw-semibold">Entrega Rápida RJ</h5>
+                <p class="small">Para Rio de Janeiro e região metropolitana, entregas ágeis.</p>
+            </div>
+            <div class="col-md-3 col-sm-6" data-aos="flip-up" data-aos-delay="100">
+                <i class="bi bi-shield-lock fs-1" style="color:#8B5A2B;"></i>
+                <h5 class="mt-2 fw-semibold">Segurança</h5>
+                <p class="small">Loja 100% regularizada, CNPJ ativo e nota fiscal eletrônica.</p>
+            </div>
+            <div class="col-md-3 col-sm-6" data-aos="flip-up" data-aos-delay="150">
+                <i class="bi bi-headset fs-1" style="color:#E9C46A;"></i>
+                <h5 class="mt-2 fw-semibold">Suporte Técnico</h5>
+                <p class="small">Dúvidas sobre tecidos ou equipamentos? Fale com especialistas.</p>
+            </div>
         </div>
     </div>
-</section>
 
-<section id="contato" class="contact">
-    <h2>Entre em Contato</h2>
-    <p>📞 Telefone: (11) 99999-9999</p>
-    <p>📧 Email: contato@ultranet.com.br</p>
-    <p>📍 Atendimento em toda a cidade</p>
-</section>
+    <!-- CONTATO / LOCALIZAÇÃO E FORM -->
+    <section id="contato" class="container my-5 py-5">
+        <div class="row g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <h2 class="section-title">Fale com a gente</h2>
+                <p class="mb-4">Estamos prontos para atender você, seja para compra de tecidos de malha, dicas de pesca ou itens para camping. Visite nossa loja física no Centro do Rio ou entre em contato pelos canais abaixo.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="bi bi-geo-alt-fill fs-4 me-3" style="color:#2C7DA0;"></i> <strong>Av. Passos, 42 - Centro, Rio de Janeiro - RJ, 20051-040</strong></li>
+                    <li class="mb-3"><i class="bi bi-telephone-fill fs-4 me-3" style="color:#2D6A4F;"></i> <strong>(47) 3350-0951</strong> (Telefone / WhatsApp)</li>
+                    <li class="mb-3"><i class="bi bi-envelope-fill fs-4 me-3" style="color:#E9C46A;"></i> contato@serenihome.com.br (representativo)</li>
+                    <li class="mb-3"><i class="bi bi-clock fs-4 me-3"></i> Seg - Sex: 9h às 18h | Sáb: 9h às 13h</li>
+                </ul>
+                <div class="mt-4 d-flex gap-3">
+                    <a href="#" class="btn btn-outline-secondary rounded-pill"><i class="bi bi-instagram"></i> Instagram</a>
+                    <a href="#" class="btn btn-outline-secondary rounded-pill"><i class="bi bi-facebook"></i> Facebook</a>
+                </div>
+            </div>
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="card p-4 border-0 shadow rounded-4">
+                    <h4 class="mb-3">Envie uma mensagem</h4>
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label class="form-label">Nome completo</label>
+                            <input type="text" class="form-control" placeholder="Seu nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">E-mail ou WhatsApp</label>
+                            <input type="email" class="form-control" placeholder="exemplo@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Assunto</label>
+                            <select class="form-select">
+                                <option>Tecidos de Malha</option>
+                                <option>Produtos de Pesca</option>
+                                <option>Camping & Aventura</option>
+                                <option>Outros assuntos</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mensagem</label>
+                            <textarea rows="3" class="form-control" placeholder="Gostaria de saber mais sobre..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">Enviar <i class="bi bi-send"></i></button>
+                        <p class="small text-muted mt-2">Responderemos em até 24h úteis.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2026 UltraNet - Todos os direitos reservados</p>
-</footer>
+    <!-- MAPA SIMBÓLICO (Localização ilustrativa) -->
+    <div class="container mb-5">
+        <div class="rounded-4 overflow-hidden shadow-sm border">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.179212589296!2d-43.194688!3d-22.903197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f71d3c2ba53%3A0x74cbfaecdb43d9ef!2sAv.%20Passos%2C%20Rio%20de%20Janeiro%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="text-center mt-2 text-muted small"><i class="bi bi-pin"></i> Avenida Passos, 42 - Centro, RJ (Referência próxima ao largo da Carioca)</div>
+    </div>
 
+    <!-- FOOTER -->
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white">Sereni Home LTDA</h5>
+                    <p class="small">CNPJ: 64.264.717/0001-23 <br> Situação cadastral: Ativa (11/12/2025)<br> Tecidos, Pesca e Camping com responsabilidade.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-white">Links Úteis</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#inicio" class="text-decoration-none text-light-emphasis">Início</a></li>
+                        <li><a href="#produtos" class="text-decoration-none text-light-emphasis">Produtos</a></li>
+                        <li><a href="#sobre" class="text-decoration-none text-light-emphasis">Sobre e dados fiscais</a></li>
+                        <li><a href="#contato" class="text-decoration-none text-light-emphasis">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-white">Atendimento</h6>
+                    <p><i class="bi bi-telephone-fill"></i> (47) 3350-0951 <br> <i class="bi bi-envelope"></i> vendas@serenihome.com.br <br> <i class="bi bi-building"></i> Av. Passos, 42 - Centro, RJ</p>
+                </div>
+            </div>
+            <hr class="opacity-25">
+            <div class="text-center small">© 2025 Sereni Home LTDA – Todos os direitos reservados. Moda, Pesca, Camping e aconchego.</div>
+        </div>
+    </footer>
+
+    <!-- Scripts Bootstrap + AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        // Simples prevenção de submit (apenas demonstração)
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Em breve retornaremos. Obrigado por confiar na Sereni Home.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
-
